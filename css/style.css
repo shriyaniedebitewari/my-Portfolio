@@ -1,0 +1,99 @@
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --purple-600: #7C3AED;
+  --purple-100: #c5bbee;
+  --cream: #FDFCFF;
+  --text-main: #1E1231;
+  --text-muted: #6B6080;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--lavender-50);
+  color: var(--text-main);
+  line-height: 1.7;
+  font-size: 20px;
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 6vw;
+  border-bottom: 1px solid var(--purple-100);
+  background: lavender#fff;
+}
+
+header p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--purple-600);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  margin-left: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--purple-600);
+}
+
+/* ── INHOUD ── */
+#heading {
+  font-size: 2.5rem;
+  color: var(--purple-600);
+  padding: 3rem 6vw 1rem;
+}
+
+p {
+  padding: 0 6vw;
+  color: var(--text-muted);
+}
+.fa-instagram {
+  color: #E1306C;
+}
+
+.fa-facebook {
+  color: #1877F2;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
