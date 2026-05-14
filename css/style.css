@@ -6,29 +6,27 @@
 }
 
 :root {
-  --purple-600: #7C3AED;
-  --purple-100: #c5bbee;
-  --cream: #FDFCFF;
+  --purple-600: #600def;
+  --purple-100: #a894f6;
   --text-main: #1E1231;
-  --text-muted: #6B6080;
+  --text-muted: #11022e;
 }
 
 body {
   font-family: sans-serif;
-  background: var(--lavender-50);
   color: var(--text-main);
   line-height: 1.7;
   font-size: 20px;
+  background: pastel rgb(228, 132, 228); 
 }
 
-/* ── HEADER ── */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 6vw;
   border-bottom: 1px solid var(--purple-100);
-  background: lavender#fff;
+  background: transparent;
 }
 
 header p {
@@ -60,6 +58,7 @@ p {
   padding: 0 6vw;
   color: var(--text-muted);
 }
+
 .fa-instagram {
   color: #E1306C;
 }
@@ -77,9 +76,6 @@ p {
 }
 
 .contact-info p {
-  margin: 8px 0;
-}
-.contact-info p {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -96,4 +92,40 @@ p {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+}
+body {
+  background: linear-gradient(135deg, #f3e8ff, #e9d5ff, #e1cbf9, #ede9fe);
+  min-height: 100vh;
+}
+body {
+  background-color: #e4caf6; /* lichtpaars */
+}
+body {
+  background: linear-gradient(135deg, #f3e6ff, #d9b3ff);
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #dfd4f8, #b287fe);
+}
+
+section {
+  background: transparent !important;
+}
+*/
+#about,
+#contact {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+#projecten {
+  background: transparent !important;
+}
+
+.project-card,
+.stat-card,
+.stat-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
 }
