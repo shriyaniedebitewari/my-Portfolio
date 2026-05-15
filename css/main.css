@@ -6,11 +6,11 @@
 }
 
 :root {
-  --cream: #FCFBFF;
+  --cream: transparent;
 
   --red-100: #e43740;
 
-  --purple-50: #F8F5FF;
+  --purple-50: transparent;
   --purple-100: #EDE9FE;
   --purple-200: #DDD6FE;
   --purple-300: #C4B5FD;
@@ -34,11 +34,13 @@ html {
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--text-main);
+  background: #f3e8ff;
+  background-attachment: fixed;
+  color: black;
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* ── NAVIGATIE ── */
@@ -92,7 +94,7 @@ nav {
   color: var(--purple-600) !important;
 }
 
-/* ── HERO ── */
+
 #hero {
   min-height: 100vh;
 
@@ -110,22 +112,7 @@ nav {
 }
 
 .hero-bg {
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      ellipse 60% 50% at 80% 40%,
-      var(--purple-100) 0%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 40% 40% at 20% 80%,
-      var(--purple-200) 0%,
-      transparent 60%
-    );
-
-  z-index: 0;
+  display: none;
 }
 
 .hero-content {
@@ -161,7 +148,7 @@ nav {
 
 .hero-title em {
   font-style: italic;
-  color: var(--purple-600);
+  
 }
 
 .hero-sub {
@@ -293,7 +280,6 @@ nav {
   }
 }
 
-/* ── BUTTONS ── */
 .btn-primary {
   display: inline-block;
 
@@ -343,7 +329,7 @@ nav {
   transform: translateY(-2px);
 }
 
-/* ── SECTIONS ── */
+
 section {
   padding: 6rem 6vw;
 }
@@ -362,14 +348,12 @@ section {
 }
 
 .section-title {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-
+  font-size: clamp(3em, 5vw, 4rem);
   line-height: 1.15;
   letter-spacing: -0.5px;
-
   margin-bottom: 1rem;
-
   font-weight: 700;
+  
 }
 
 .section-desc {
@@ -396,9 +380,9 @@ section {
   margin-bottom: 1.5rem;
 }
 
-/* ── ABOUT ── */
+
 #about {
-  background: var(--purple-50);
+  background: transparent;
 }
 
 .about-grid {
@@ -411,7 +395,7 @@ section {
 }
 
 .about-text p {
-  color: var(--text-muted);
+  color: black;
   margin-bottom: 1.25rem;
 }
 
@@ -451,114 +435,48 @@ section {
   font-weight: 500;
 }
 
-/* ── PROJECTS ── */
+
 #projecten {
-  background: var(--cream);
+  background: transparent;
 }
 
 .projects-grid {
   display: flex;
-  gap: 2rem;
-
+  flex-direction: column;
+  gap: 3rem;
   padding: 2rem 6vw;
 }
 
-.project-card {
+.project-content {
   display: flex;
-  flex-direction: row;
-
-  align-items: stretch;
-
+  flex-direction: row;      /* foto links, tekst rechts */
+  align-items: flex-start;
+  gap: 2rem;
   background: #fff;
-
   border-radius: var(--radius);
-
-  overflow: hidden;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-
-  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.1);
-}
-
-.project-card img {
-  width: 45%;
-  height: 500px;
-
-  object-fit: cover;
-
-  flex-shrink: 0;
-}
-
-.project-body {
-  width: 55%;
   padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.project-tag {
-  font-size: 0.72rem;
-  font-weight: 500;
-
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  color: var(--purple-500);
-
-  margin-bottom: 0.5rem;
+.project-image {
+  flex-shrink: 0;
+  width: 350px;             /* breedte van alle foto's */
 }
 
-.project-title {
-  font-size: 24px;
-
-  margin-bottom: 0.6rem;
-
-  color: var(--text-main);
-
-  font-weight: 600;
+.project-image img {
+  width: 350px;
+  height: 250px;            /* hoogte van alle foto's */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.project-desc {
-  font-size: 16px;
-
-  line-height: 1.7;
-
-  color: var(--text-muted);
-
-  margin-bottom: 1.25rem;
+.project-text {
+  flex: 1;
 }
 
-.project-link {
-  font-size: 0.85rem;
-  font-weight: 500;
-
-  color: var(--purple-600);
-
-  text-decoration: none;
-
-  border-bottom: 1.5px solid var(--purple-200);
-
-  padding-bottom: 1px;
-
-  transition:
-    color var(--transition),
-    border-color var(--transition);
-}
-
-.project-link:hover {
-  color: var(--purple-700);
-  border-color: var(--purple-500);
-}
-
-/* ── CONTACT ── */
 #contact {
-  background: var(--purple-50);
+  background: transparent;
 }
 
 .contact-wrapper {
@@ -692,8 +610,6 @@ section {
   background: var(--purple-700);
   transform: translateY(-1px);
 }
-
-/* ── FOOTER ── */
 footer {
   text-align: center;
 
@@ -706,7 +622,6 @@ footer {
   color: var(--text-muted);
 }
 
-/* ── ANIMATIONS ── */
 .fade-up {
   opacity: 0;
   transform: translateY(28px);
@@ -729,7 +644,6 @@ footer {
   transition-delay: 0.30s;
 }
 
-/* ── EXTRA BUTTON STATES ── */
 .btn-error {
   background: #DC2626 !important;
 }
@@ -738,7 +652,6 @@ footer {
   background: #059669 !important;
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
 
   #hero {
@@ -776,11 +689,199 @@ footer {
     flex-direction: column;
   }
 }
-  html, body {
+html, body {
   height: 100%;
   margin: 0;
 }
+.naam {
+  background: linear-gradient(90deg, #b370f2, #2e63a3, #cba1f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+h1 {
+  animation: fadeIn 1.5s ease-in;
+}
 
-body {
-  background: linear-gradient(135deg, #dfd4f8, #b287fe);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.foto-naam {
+  background: linear-gradient(90deg, #c084fc, #818cf8, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 22px;
+  white-space: nowrap;
+  text-align: center;
+}
+.btn-gekleurd {
+  background: linear-gradient(90deg, #b370f2, #2e63a3);
+  border: none;
+  color: white;
+}
+
+.btn-gekleurd:hover {
+  background: linear-gradient(90deg, #2e63a3, #b370f2);
+  transform: translateY(-2px);
+}
+#about h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.about-text p {
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+#projecten .section-title {
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+#projecten .section-desc {
+  color: black;
+  margin-bottom: 1.5rem;
+}
+.contact-info p {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.contact-link {
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.contact-link-icon {
+  width: 45px;
+  height: 45px;
+  font-size: 1.4rem;
+  background: transparent;
+}
+
+.contact-link-icon i {
+  font-size: 1.4rem;
+}
+
+.fa-instagram {
+  color: #E1306C;
+}
+
+.fa-facebook {
+  color: #1877F2;
+}
+.fa-envelope {
+  color: #EA4335;
+}
+
+.fa-phone {
+  color: #25D366;
+}
+.form-group label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: black;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 1.1rem;
+  padding: 1rem 1.2rem;
+}
+.btn-gekleurd {
+  background: linear-gradient(90deg, #9333ea, #6366f1, #3b82f6);
+  color: white;
+  border: none;
+}
+
+.btn-gekleurd:hover {
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #7c5d98);
+  transform: translateY(-2px);
+}
+
+.form-submit {
+  background: linear-gradient(90deg, #9333ea, #6366f1, #3b82f6);
+}
+
+.form-submit:hover {
+  background: linear-gradient(90deg, #7faffc, #070bff, #9333ea);
+}
+#projecten .section-title {
+  background: linear-gradient(90deg, #9333ea, #6366f1, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 4rem;
+  font-weight: 800;
+}
+#projecten .section-desc {
+  font-size: 1.2rem;
+  color: black;
+  font-weight: 500;
+}
+.project-desc {
+  color: black;
+  font-size: 1rem;
+}
+
+.project-title {
+  color: black;
+  font-size: 1.6rem;
+}
+
+
+.hero-title {
+  opacity: 0;
+  animation: fadeInHero 2s ease forwards;
+}
+
+.hero-title .naam {
+  background: linear-gradient(
+    90deg,
+    #c084fc,
+    #9333ea,
+    #6366f1,
+    #60a5fa
+  );
+
+  background-size: 300% 300%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 6s ease infinite;
+}
+
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
